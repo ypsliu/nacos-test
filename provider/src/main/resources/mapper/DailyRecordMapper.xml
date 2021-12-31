@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.DailyRecordMapper">
+    <resultMap id="BaseResult" type="com.example.demo.domain.DailyRecord">
+        <result column="meterNo" property="meterNo" jdbcType="VARCHAR"/>
+        <result column="price" property="price" jdbcType="VARCHAR"/>
+        <result column="userNo" property="userNo" jdbcType="VARCHAR"/>
+        <result column="address" property="address" jdbcType="VARCHAR"/>
+        <result column="userName" property="userName" jdbcType="VARCHAR"/>
+        <result column="amount" property="amount" jdbcType="DOUBLE"/>
+        <result column="usegas" property="usegas" jdbcType="DOUBLE"/>
+        <result column="date" property="date" jdbcType="TIMESTAMP"/>
+
+    </resultMap>
+    <select id="selectAllDailyRecord" resultMap="BaseResult">
+        select d.meter_no as meterNo,
+               d.price as price,
+               m.user_no as userNo,
+               m.add_des as address,
+               m.customer_name as userName,
+               sum(ifnull(d.credit_amt,0)) as amount,
+               sum(ifnull(d.quantity,0)) as usegas,
+               d.use_date as date
+        from daily_record d left join meter m
+            on d.meter_id=m.meter_id
+        where 1=1
+        and d.use_date >= '2019-01-01 00:00:00'
+        and d.use_date &lt;= '2021-11-20 23:59:59'
+        and m.org_id like '000102%'
+        group by
+            d.meter_no, d.price, m.user_no, m.add_des, m.customer_name, d.use_date
+        order by
+            d.meter_no,d.use_date
+    </select>
+</mapper>

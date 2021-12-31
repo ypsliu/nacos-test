@@ -1,0 +1,13 @@
+singleServerConfig:
+ address: "redis://127.0.0.1:6379"
+ password: eslink
+ database: 0
+threads: 2
+nettyThreads: 2
+codec: !<org.redisson.codec.JsonJacksonCodec> {}
+transportMode: "NIO"
+#      application.yml配置方式
+#      config: |
+#        singleServerConfig:
+#          address: "redis://127.0.0.1:6379"
+#          password: lzy
