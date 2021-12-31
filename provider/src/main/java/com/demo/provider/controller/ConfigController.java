@@ -1,8 +1,8 @@
 package com.demo.provider.controller;
 
-import com.demo.provider.constant.BaseStatusCode;
-import com.demo.provider.constant.IStatusCode;
-import com.demo.provider.handler.ResponseDataBody;
+import com.demo.common.HttpUtils.constant.status.BaseStatusCode;
+import com.demo.common.HttpUtils.constant.status.IStatusCode;
+import com.demo.common.HttpUtils.constant.target.ResponseDataBody;
 import com.demo.provider.util.ConfigUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

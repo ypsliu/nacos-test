@@ -1,6 +1,5 @@
 package com.demo.provider.util;
 
-import com.demo.common.IDUtil.SnowflakeIdWorker;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

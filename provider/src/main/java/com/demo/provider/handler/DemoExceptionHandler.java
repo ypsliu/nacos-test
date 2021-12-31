@@ -1,8 +1,8 @@
 package com.demo.provider.handler;
 
-import com.demo.provider.domain.response.BaseResponseDto;
-import com.demo.provider.domain.response.ResponseUtil;
-import com.demo.provider.exception.BaseException;
+import com.demo.common.HttpUtils.domain.response.BaseResponseDto;
+import com.demo.common.HttpUtils.domain.response.ResponseUtil;
+import com.demo.common.HttpUtils.exception.BaseException;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;

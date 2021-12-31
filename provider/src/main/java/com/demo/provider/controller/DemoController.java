@@ -1,7 +1,7 @@
 package com.demo.provider.controller;
 
+import com.demo.common.HttpUtils.constant.target.ResponseDataBody;
 import com.demo.provider.domain.User;
-import com.demo.provider.handler.ResponseDataBody;
 import com.demo.provider.targer.checkToken;
 import com.demo.redisson.operation.RedissonObject;
 import lombok.extern.slf4j.Slf4j;

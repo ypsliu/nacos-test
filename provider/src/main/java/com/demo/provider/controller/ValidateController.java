@@ -1,13 +1,14 @@
 package com.demo.provider.controller;
 
-import com.demo.provider.constant.BaseStatusCode;
-import com.demo.provider.constant.IStatusCode;
-import com.demo.provider.handler.ResponseDataBody;
-import com.demo.provider.domain.request.UserRequestDto;
-import com.demo.provider.domain.response.UserResponseDto;
-import com.demo.provider.validate.group.UserRequestDtoAddValidate;
+
+import com.demo.common.HttpUtils.constant.status.BaseStatusCode;
+import com.demo.common.HttpUtils.constant.status.IStatusCode;
+import com.demo.common.HttpUtils.constant.target.ResponseDataBody;
+import com.demo.common.HttpUtils.domain.request.UserRequestDto;
+import com.demo.common.HttpUtils.domain.response.UserResponseDto;
+import com.demo.common.HttpUtils.validate.group.UserRequestDtoAddValidate;
+import com.demo.common.HttpUtils.validate.group.UserRequestDtoUpdateValidate;
 import com.demo.provider.validate.group.UserRequestDtoSimpleValidate;
-import com.demo.provider.validate.group.UserRequestDtoUpdateValidate;
 import com.fasterxml.jackson.annotation.JsonView;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;

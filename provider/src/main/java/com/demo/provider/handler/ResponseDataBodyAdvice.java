@@ -1,7 +1,8 @@
 package com.demo.provider.handler;
 
-import com.demo.provider.domain.response.BaseResponseDto;
-import com.demo.provider.domain.response.ResponseUtil;
+import com.demo.common.HttpUtils.constant.target.ResponseDataBody;
+import com.demo.common.HttpUtils.domain.response.BaseResponseDto;
+import com.demo.common.HttpUtils.domain.response.ResponseUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.MethodParameter;
 import org.springframework.core.Ordered;
