@@ -1,0 +1,3 @@
+#自定义redisson config加载
+#org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+#  com.example.demo.redis.starter.RedissonAutoConfiguration

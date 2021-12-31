@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.mapper.UserMapper">
-    <select id="selectAll" resultType="com.example.demo.domain.User">
+<mapper namespace="com.demo.provider.mapper.UserMapper">
+    <select id="selectAll" resultType="com.demo.provider.domain.User">
         select id,user_name,age,address from user order by id
     </select>
 </mapper>

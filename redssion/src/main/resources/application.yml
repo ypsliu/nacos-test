@@ -1,0 +1,9 @@
+#开发环境
+log:
+  level: DEBUG
+spring:
+  redis:
+    redisson:
+      file: classpath:/redisson/SingleRedisson.yaml
+logging:
+  config: classpath:logback-spring.xml
