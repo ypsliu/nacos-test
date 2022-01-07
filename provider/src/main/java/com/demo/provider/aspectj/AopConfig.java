@@ -7,8 +7,8 @@ package com.demo.provider.aspectj;
  *
  */
 
-import com.demo.provider.constant.DeviceStatusCode;
-import com.demo.provider.exception.BaseException;
+import com.demo.common.HttpUtils.constant.status.DeviceStatusCode;
+import com.demo.common.HttpUtils.exception.BaseException;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -101,5 +101,27 @@ public class AopConfig {
         return "0:0:0:0:0:0:0:1".equals(ip) ? "127.0.0.1" : ip;
     }
 
+
+//    //连接点是@RequestMapping注解的方法
+//    @Pointcut("execution(* com.demo.provider.*.*(..))")
+//    private void webPointcut() {}
+//
+//    //切点在webpointCut()
+//    @AfterThrowing(pointcut = "webPointcut()", throwing = "e")
+//    //controller类抛出的异常在这边捕获
+//    public void handleThrowing(JoinPoint joinPoint, Exception e) {
+//        String className = joinPoint.getTarget().getClass().getName();
+//        String methodName = joinPoint.getSignature().getName();
+//        Object[] args = joinPoint.getArgs();
+//        //开始打log
+//        System.out.println("异常:" + e.getMessage());
+//        System.out.println("异常所在类：" + className);
+//        System.out.println("异常所在方法：" + methodName);
+//        System.out.println("异常中的参数：");
+//        System.out.println(methodName);
+//        for (int i = 0; i < args.length; i++) {
+//            System.out.println(args[i].toString());
+//        }
+//    }
 
 }

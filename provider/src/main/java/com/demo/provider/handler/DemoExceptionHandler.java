@@ -26,6 +26,7 @@ import java.util.List;
 @Order(Ordered.HIGHEST_PRECEDENCE)//order拦截顺序
 @Slf4j
 public class DemoExceptionHandler {
+
     @ExceptionHandler(BaseException.class)
     public BaseResponseDto handleAllExceptions(BaseException demoException) {
         return ResponseUtil.error(demoException);
