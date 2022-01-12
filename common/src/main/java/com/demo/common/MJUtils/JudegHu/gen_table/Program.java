@@ -1,4 +1,4 @@
-﻿package com.demo.common.MJUtils.JudegHu.gen_table;
+package com.demo.common.MJUtils.JudegHu.gen_table;
 
 import java.util.HashMap;
 

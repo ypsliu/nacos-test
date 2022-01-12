@@ -1,4 +1,4 @@
-﻿package com.demo.common.MJUtils.JudegHu.checkHu;
+package com.demo.common.MJUtils.JudegHu.checkHu;
 
 import java.util.HashSet;
 import java.util.Random;
@@ -33,8 +33,9 @@ public class Program {
 	static void check_hu(int[] cards, int max_gui_index) {
 
 		for (int i = 0; i < max_gui_index; ++i) {
-			if (cards[i] > 4)
+			if (cards[i] > 4){
 				return;
+			}
 		}
 
 		int num = 0;

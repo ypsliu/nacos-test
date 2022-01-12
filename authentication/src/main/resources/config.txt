@@ -70,3 +70,23 @@ codeTimeout	long	300	Code授权码 保存的时间(单位秒) 默认五分钟
 accessTokenTimeout	long	7200	Access-Token 保存的时间(单位秒) 默认两个小时
 refreshTokenTimeout	long	2592000	Refresh-Token 保存的时间(单位秒) 默认30 天
 clientTokenTimeout	long	7200	Client-Token 保存的时间(单位秒) 默认两个小时
+
+
+token风格
+// 1. token-style=uuid    —— uuid风格 (默认风格)
+"623368f0-ae5e-4475-a53f-93e4225f16ae"
+
+// 2. token-style=simple-uuid    —— 同上，uuid风格, 只不过去掉了中划线
+"6fd4221395024b5f87edd34bc3258ee8"
+
+// 3. token-style=random-32    —— 随机32位字符串
+"qEjyPsEA1Bkc9dr8YP6okFr5umCZNR6W"
+
+// 4. token-style=random-64    —— 随机64位字符串
+"v4ueNLEpPwMtmOPMBtOOeIQsvP8z9gkMgIVibTUVjkrNrlfra5CGwQkViDjO8jcc"
+
+// 5. token-style=random-128    —— 随机128位字符串
+"nojYPmcEtrFEaN0Otpssa8I8jpk8FO53UcMZkCP9qyoHaDbKS6dxoRPky9c6QlftQ0pdzxRGXsKZmUSrPeZBOD6kJFfmfgiRyUmYWcj4WU4SSP2ilakWN1HYnIuX0Olj"
+
+// 6. token-style=tik    —— tik风格
+"gr_SwoIN0MC1ewxHX_vfCW3BothWDZMMtx__"

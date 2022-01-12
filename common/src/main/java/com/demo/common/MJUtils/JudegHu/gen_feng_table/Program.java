@@ -1,8 +1,7 @@
-﻿package com.demo.common.MJUtils.JudegHu.gen_feng_table;
+package com.demo.common.MJUtils.JudegHu.gen_feng_table;
 
 import java.util.HashMap;
 
-@SuppressWarnings("unchecked")
 public class Program {
 	static HashMap<Integer, Boolean>[] gui_tested = new HashMap[9];
 	static HashMap<Integer, Boolean>[] gui_eye_tested = new HashMap[9];
