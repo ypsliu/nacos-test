@@ -1,4 +1,4 @@
-package com.demo.drewnoakes;
+package com.demo.image.drewnoakes;
 
 
 import cn.hutool.http.HttpUtil;
