@@ -28,7 +28,7 @@ public class Demo1 {
      * 返回[[1,2],[2,1]]
      */
     public static void main(String[] args) {
-        List<Integer> nums = new ArrayList<>(Arrays.asList(2,3,4,5,4));
+        List<Integer> nums = new ArrayList<>(Arrays.asList(1,2,3,3));
         //去重
         System.out.println(getAllCompose(nums));
         System.out.println(getComposes(nums));
@@ -57,7 +57,7 @@ public class Demo1 {
     }
 
     /**
-     *  [[1],[2,3]] -> [1,2],[1,3]
+     * [[1],[2,3]] -> [1,2],[1,3]
      * @param lists
      * @return
      */
@@ -100,27 +100,26 @@ public class Demo1 {
     }
 
     /**
-     * new ArrayList<>(Arrays.asList(2,3,4,5,4))
-     * @param nums
-     * @return
+     * @param nums new ArrayList<>(Arrays.asList(1,2,3,3))
+     * @return [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
      */
     public static List<List<Integer>> getComposes(List<Integer> nums){
-        //去重[2,3,4,5]
+        //去重[1,2,3]
         List<Integer> distinctNums = nums.stream().distinct().collect(Collectors.toList());
-        //切割[[2], [3], [4], [5]]
+        //切割[[1], [2], [3]]
         List<List<Integer>> operateList = ListUtil.splitAvg(distinctNums,distinctNums.size());
-
         Stream<List<Integer>> stream = operateList.stream();
         for(int i=0;i<distinctNums.size()-1;i++){
             stream = stream
                     .flatMap(
                             list1 -> operateList.stream()
                                     .filter(list2 -> !list1.contains(list2.get(0)))
-                                    .map(list2 -> {
-                                        List<Integer> list3 = new ArrayList<>();
-                                        list3.addAll(list1);
-                                        list3.addAll(list2);
-                                        return list3;
+                                    .map(
+                                            list2 -> {
+                                                List<Integer> list3 = new ArrayList<>();
+                                                list3.addAll(list1);
+                                                list3.addAll(list2);
+                                                return list3;
                                     })
                     );
         }
