@@ -76,6 +76,7 @@ public class Demo1 {
      * @return
      */
     public static List<List<Integer>> getAllCompose(List<Integer> nums){
+
         //去重
         List<Integer> distinctNums = nums.stream().distinct().collect(Collectors.toList());
         //int -> string
