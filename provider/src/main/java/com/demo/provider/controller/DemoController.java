@@ -5,6 +5,7 @@ import com.demo.provider.domain.User;
 import com.demo.provider.targer.checkToken;
 import com.demo.redisson.operation.RedissonObject;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,6 +34,7 @@ public class DemoController {
     @RequestMapping(value = "/get")
     public String get(){
         User user = redissonObject.getValue("test_user");
+        Assert.notNull(user,"用户不存在");
         log.info("get user from redis: "+user);
         return "hello world set";
     }

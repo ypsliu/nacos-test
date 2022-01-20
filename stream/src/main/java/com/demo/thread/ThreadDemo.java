@@ -1,5 +1,13 @@
 package com.demo.thread;
 
+import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.map.MapUtil;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.LongAdder;
+
 /**
  * @author lz
  * @date 2021-11-18 13:20
@@ -131,5 +139,11 @@ public class ThreadDemo {
         t3.join();
         Long endTime = System.currentTimeMillis();
         System.out.println("do it over: "+threadDemo.n+";use time: "+(endTime-startTime));
+
+
+        AtomicLong atomicLong = new AtomicLong();
+        atomicLong.incrementAndGet();
+        LongAdder longAdder = new LongAdder();
+        longAdder.increment();
     }
 }
