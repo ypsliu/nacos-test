@@ -15,7 +15,7 @@ public class RateLimitDemo {
 
     public static void main(String[] args) {
         /*第一次请求，“预支”了后面的令牌，而预支的时间，由下一次请求来“承受”*/
-        double timeSpendOne = rateLimiter.acquire(4);
+        double timeSpendOne = rateLimiter.acquire(10);
         System.out.println("第一次请求等待时长："+timeSpendOne);
         double timeSpendTwo = rateLimiter.acquire(2);
         System.out.println("第二次请求等待时长："+timeSpendTwo);

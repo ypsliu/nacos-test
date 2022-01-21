@@ -1,7 +1,4 @@
-package com.demo.rocketmq.MqThreadExecutor;
-
-import java.util.concurrent.Executor;
-import java.util.concurrent.ThreadPoolExecutor;
+package com.demo.rocketmq.executor;
 
 /**
  * Created with IntelliJ IDEA.

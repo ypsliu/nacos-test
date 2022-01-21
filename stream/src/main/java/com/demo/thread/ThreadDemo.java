@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.LongAdder;
+import java.util.function.Consumer;
 
 /**
  * @author lz
@@ -145,5 +146,6 @@ public class ThreadDemo {
         atomicLong.incrementAndGet();
         LongAdder longAdder = new LongAdder();
         longAdder.increment();
+
     }
 }
