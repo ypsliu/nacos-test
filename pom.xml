@@ -32,6 +32,7 @@
         <csp.version>1.8.0</csp.version>
         <redisson.version>3.16.4</redisson.version>
         <erupt.version>1.9.3</erupt.version>
+        <mapstruct.version>1.3.1.Final</mapstruct.version>
     </properties>
     <!-- 版本进行管理，不会实际引入jar  -->
     <dependencyManagement>
@@ -203,6 +204,19 @@
                 <groupId>xyz.erupt</groupId>
                 <artifactId>erupt-web</artifactId>
                 <version>${erupt.version}</version>
+            </dependency>
+
+            <!--MapStruct-jdk8 -->
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-jdk8</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${mapstruct.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

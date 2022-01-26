@@ -3,8 +3,8 @@ package com.demo.thread;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.map.MapUtil;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.LongAdder;
 import java.util.function.Consumer;
@@ -144,8 +144,21 @@ public class ThreadDemo {
 
         AtomicLong atomicLong = new AtomicLong();
         atomicLong.incrementAndGet();
-        LongAdder longAdder = new LongAdder();
+        LongAdder longAdder = new LongAdder();//性能更好
         longAdder.increment();
 
+        /**
+         * ArrayList : 基于数组实现的非线程安全的集合。实现 RandomAccess 接口，支持随机访问，查询元素快，插入，删除中间元素慢。
+         * LinkedList : 基于链表实现的非线程安全的集合。查询元素慢，插入，删除中间元素快，一般情况占用空间大（维护双指针）。
+         */
+        Collections.synchronizedList(new ArrayList<>());
+        /**
+         * 基于数组实现的线程安全的写时复制集合。线程安全（ReentrantLock加锁），性能比Vector高，适合读多写少的场景，最终一致性。
+         */
+        new CopyOnWriteArrayList();
+        /**
+         * Vector : 基于数组实现的线程安全的集合。线程同步（方法被synchronized修饰），性能比 ArrayList 差。
+         */
+        new Vector<>();
     }
 }

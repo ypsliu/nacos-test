@@ -5,6 +5,7 @@ import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.Assert;
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,6 +14,7 @@ import java.util.concurrent.TimeUnit;
  * @date 2021-11-06 11:17
  * @ClassName RLockOpertions.java
  * @Description 可重入锁操作
+ *
  */
 @Slf4j
 @Component
@@ -20,6 +22,33 @@ public class RLockOpertions {
 
     @Autowired
     RedissonClient redissonClient;
+
+    /**
+     * 用锁得时候，它是对线程加锁的，释放锁的线程id得和加锁得线程id相同
+     * @param lockKey
+     */
+    public void unlockSingle(String lockKey) {
+        RLock lock = redissonClient.getLock(lockKey);
+        // 1. 最常见的使用方法
+        //lock.lock();
+        // 2. 支持过期解锁功能,10秒钟以后自动解锁, 无需调用unlock方法手动解锁
+        //lock.lock(10, TimeUnit.SECONDS);
+        // 3. 尝试加锁，最多等待3秒，上锁以后10秒自动解锁
+        //boolean res = lock.tryLock(3, 10, TimeUnit.SECONDS);
+        try {
+            if (lock.tryLock(5, 10, TimeUnit.SECONDS)) {
+                //业务处理
+            } else {
+                Assert.isTrue(false, "排队中,请稍后重试!");
+            }
+        } catch (InterruptedException e) {
+            Assert.isTrue(false, "请勿重复操作!");
+        } finally {
+            if (lock.isLocked() && lock.isHeldByCurrentThread()) {
+                lock.unlock();
+            }
+        }
+    }
 
     public void  lock() throws InterruptedException{
         log.info("线程：{}，进入方法",Thread.currentThread().getName());

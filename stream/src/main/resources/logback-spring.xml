@@ -144,7 +144,7 @@
 	<root level="DEBUG">
 		<!-- 生产环境将请stdout去掉 -->
 		<appender-ref ref="FILEDEBUG" />
-		<!--<appender-ref ref="FILEINFO" />-->
+<!--		<appender-ref ref="FILEINFO" />-->
 		<appender-ref ref="info-async-appender" />
 		<appender-ref ref="FILEWARN" />
 		<appender-ref ref="FILEERROR" />
