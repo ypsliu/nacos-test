@@ -2,7 +2,8 @@ package com.demo.mapStruct.mapper;
 
 import com.demo.mapStruct.dto.UserDTO;
 import com.demo.mapStruct.vo.UserVO;
-import org.apache.ibatis.annotations.Mapper;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 /**
@@ -21,9 +22,13 @@ public interface UserMapper {
 
     /**
      * 将DTO转VO
-     *
+     * source 源数据
+     * target 目标数据
      * @param userDTO
      * @return
      */
+    @Mapping(source = "loginName",target = "userName")
+    @Mapping(target = "createTime",dateFormat = "yyyy-MM-dd HH:mm:ss")
+    @Mapping(target = "age",source = "age",numberFormat = "$#.00")
     UserVO userVO2UserDTO(UserDTO userDTO);
 }

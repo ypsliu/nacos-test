@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -19,9 +20,9 @@ import java.util.Date;
 @AllArgsConstructor
 @Builder
 public class UserVO {
-    private String name;
+    private String userName;
 
-    private int age;
+    private String age;
 
-    private Date createTime;
+    private String createTime;
 }

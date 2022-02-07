@@ -4,6 +4,7 @@ import com.demo.mapStruct.dto.UserDTO;
 import com.demo.mapStruct.mapper.UserMapper;
 import com.demo.mapStruct.vo.UserVO;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -16,9 +17,9 @@ import java.util.Date;
 public class Logic {
     public static void main(String[] args) {
         UserDTO userDTO = UserDTO.builder()
-                .name("张三")
+                .loginName("张三")
                 .age(10)
-                .createTime(new  Date())
+                .createTime(LocalDateTime.now())
                 .build();
         UserVO userVO = UserMapper.INSTANCE.userVO2UserDTO(userDTO);
         System.out.println(userVO);
