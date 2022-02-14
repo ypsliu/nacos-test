@@ -21,10 +21,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * Time: 16:30
  * Description: No Description
  */
-@Configuration
+//@Configuration
 @EnableSwagger2
 public class Swagger2Config extends WebMvcConfigurationSupport {
-    @Bean
+//    @Bean
     public Docket createRestApi(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())

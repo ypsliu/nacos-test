@@ -2,10 +2,13 @@ package com.demo.thread;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.map.MapUtil;
+import com.demo.stream.Person;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.concurrent.atomic.AtomicStampedReference;
 import java.util.concurrent.atomic.LongAdder;
 import java.util.function.Consumer;
 
@@ -160,5 +163,10 @@ public class ThreadDemo {
          * Vector : 基于数组实现的线程安全的集合。线程同步（方法被synchronized修饰），性能比 ArrayList 差。
          */
         new Vector<>();
+
+        new AtomicReference(new Person());
+
+        //解决ABA问题
+        new AtomicStampedReference(new Person(),1);
     }
 }
