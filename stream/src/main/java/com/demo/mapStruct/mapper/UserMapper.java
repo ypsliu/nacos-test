@@ -15,7 +15,7 @@ import org.mapstruct.factory.Mappers;
  */
 // spring方式加载,生成的实现类上面会自动添加一个@Component注解，可以通过Spring的 @Autowired方式进行注入
 //@Mapper(componentModel = "spring")
-@Mapper
+//@Mapper
 public interface UserMapper {
     // default方式加载
     UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);

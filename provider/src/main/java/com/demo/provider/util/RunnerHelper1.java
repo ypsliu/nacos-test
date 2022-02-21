@@ -1,6 +1,8 @@
 package com.demo.provider.util;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -13,9 +15,9 @@ import org.springframework.stereotype.Component;
  */
 @Slf4j
 @Component
-public class RunnerHelper implements CommandLineRunner {
+public class RunnerHelper1 implements ApplicationRunner {
     @Override
-    public void run(String... args) throws Exception {
-        log.info("server start success,you can do something here^ ^ 1");
+    public void run(ApplicationArguments applicationArguments) throws Exception {
+        log.info("server start success,you can do something here^ ^ 2");
     }
 }
