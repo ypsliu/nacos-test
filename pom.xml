@@ -19,6 +19,7 @@
         <module>swagger-ui</module>
         <module>component</module>
         <module>management</module>
+        <module>web-monitor</module>
     </modules>
     <name>nacos</name>
     <description>Demo project for Spring Boot</description>
@@ -32,8 +33,9 @@
         <csp.version>1.8.0</csp.version>
         <redisson.version>3.16.4</redisson.version>
         <erupt.version>1.9.3</erupt.version>
-        <mapstruct.version>1.3.1.Final</mapstruct.version>
+        <mapstruct.version>1.4.2.Final</mapstruct.version>
         <rocketmq.version>4.9.0</rocketmq.version>
+        <jmh.version>1.21</jmh.version>
     </properties>
     <!-- 版本进行管理，不会实际引入jar  -->
     <dependencyManagement>
@@ -235,6 +237,25 @@
                 <groupId>org.apache.rocketmq</groupId>
                 <artifactId>rocketmq-client</artifactId>
                 <version>${rocketmq.version}</version>
+            </dependency>
+
+            <!-- jmh测试工具依赖-->
+            <dependency>
+                <groupId>org.openjdk.jmh</groupId>
+                <artifactId>jmh-core</artifactId>
+                <version>${jmh.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjdk.jmh</groupId>
+                <artifactId>jmh-generator-annprocess</artifactId>
+                <version>${jmh.version}</version>
+            </dependency>
+
+            <!-- spring-boot-admin 监控依赖-->
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-server</artifactId>
+                <version>2.4.2</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

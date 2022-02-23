@@ -1,0 +1,33 @@
+被监控的项目中加入以下依赖
+<dependency>
+  <groupId>de.codecentric</groupId>
+  <artifactId>spring-boot-admin-starter-client</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+
+增加配置
+# Spring Boot Admin 监控服务器端地址
+spring.boot.admin.client.url=http://localhost:9001
+# 开启监控所有项
+properties文件：
+management.endpoints.web.exposure.include=*
+yml文件:
+    management:
+      endpoints:
+        web:
+          exposure:
+            include: "*"
+      endpoint:
+          health:
+            show-details: always
+
+#报警功能注意事项有以下几个：
+ 发送邮件的邮箱必须开启 SMTP 服务。
+ 发送邮箱无需设置密码，只需要为配置项“spring.mail.password”设置邮箱授权码即可。
+ 发送邮箱和接收邮箱可以是同一个邮箱地址。
+ SBA 邮箱报警提醒功能无需添加任何代码，只需要添加相应的框架支持，然后再配置上正确的收、发邮箱即可。
+ # 配置接收邮箱
+ spring.boot.admin.notify.mail.to=xxx@qq.com,yyy@qq.com

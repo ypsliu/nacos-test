@@ -1,0 +1,24 @@
+server:
+  port: 9001
+# 配置发送邮箱
+spring:
+  boot:
+    admin:
+      notify:
+        mail:
+          from: 1204375052@qq.com
+  # 配置接收邮箱
+          to: 1204375052@qq.com
+  # 配置邮箱 smtp 地址（qq 发送邮箱的固定 host 是 smtp.qq.com）
+  mail:
+    host: smtp.qq.com
+  # 配置邮箱授权码（此处为授权码，而非密码，获取授权码本文下一步有说明）
+    password: xxxxxx
+  # 配置邮箱的账户名（这个是上面配置发送邮件的账户名）
+    username: 1204375052@qq.com
+# 设置登录用户名、密码和角色
+  security:
+    user:
+      name: java666
+      password: java666
+      roles: SBA_ADMIN
