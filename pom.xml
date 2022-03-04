@@ -20,6 +20,7 @@
         <module>component</module>
         <module>management</module>
         <module>web-monitor</module>
+        <module>spring-lzy</module>
     </modules>
     <name>nacos</name>
     <description>Demo project for Spring Boot</description>

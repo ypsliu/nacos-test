@@ -7,7 +7,7 @@ package com.demo.redisson.jedisDemo;
  * Time: 10:57
  * Description: No Description
  */
-public class Demo {
+public class PipelineDemo {
     public static void main(String[] args) {
 //        Jedis jedis = new Jedis("127.0.0.1", 6379);
 //        // 记录执行开始时间

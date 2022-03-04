@@ -41,5 +41,19 @@ public class ThreadPoolDemo {
 //        CallerRunsPolicy策略：调用主线程执行被拒绝的任务，这提供了一种简单的反馈控制机制，将降低新任务的提交速度。
 //        DiscardPolicy策略：默默丢弃无法处理的任务，不予任何处理。
 //        AbortPolicy策略：直接抛出异常，阻止系统正常工作。
+
+        ExecutorService threadPool = new ThreadPoolExecutor(
+                8, //corePoolSize线程池中核心线程数
+                10, //maximumPoolSize 线程池中最大线程数
+                60, //线程池中线程的最大空闲时间，超过这个时间空闲线程将被回收
+                TimeUnit.SECONDS,//时间单位
+                new ArrayBlockingQueue(500), //队列
+                new ThreadPoolExecutor.CallerRunsPolicy()); //拒绝策略
+
+        //使用@Async注解开启的异步功能，默认情况下，每次都会创建一个新线程。
+        //
+        //如果在高并发的场景下，可能会产生大量的线程，从而导致OOM问题。
+        //
+        //建议大家在@Async注解开启的异步功能时，请别忘了定义一个线程池。
     }
 }
