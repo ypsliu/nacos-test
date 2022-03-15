@@ -1,4 +1,4 @@
-package com.demo.effective.staticProxy;
+package com.demo.effective.designPatterns.staticProxy;
 
 /**
  * Created with IntelliJ IDEA.
