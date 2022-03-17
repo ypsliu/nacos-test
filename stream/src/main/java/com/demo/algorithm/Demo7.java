@@ -28,9 +28,25 @@ public class Demo7 {
         }
     }
 
+    public static void test3(){
+        try {
+            int i=1/0;
+        }catch (Exception e){
+            System.out.println("test3");
+        }
+    }
+
+    public static void test4(){
+        try {
+            test3();
+        }catch (Exception e){
+            System.out.println("test4");
+        }
+    }
     public static void main(String[] args) {
 //        test1() = 2
 //        test2() = 3
-        System.out.println(test2());
+//        System.out.println(test2());
+        test4();
     }
 }

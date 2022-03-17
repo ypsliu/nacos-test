@@ -19,11 +19,11 @@ public class Singleton2 {
     // 一定要将默认构造方法设置为private 否则反射实例化将破坏单例
     private Singleton2(){}
 
-    public static class LazyHoader{
+    public static class LazyLoader{
         private static final Singleton2 INSTANCE = new Singleton2();
     }
 
     public static Singleton2 getInstance(){
-        return LazyHoader.INSTANCE;
+        return LazyLoader.INSTANCE;
     }
 }

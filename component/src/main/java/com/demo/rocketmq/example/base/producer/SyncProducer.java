@@ -7,6 +7,7 @@ import org.apache.rocketmq.client.producer.SendStatus;
 import org.apache.rocketmq.common.message.Message;
 
 import java.nio.charset.StandardCharsets;
+import java.time.LocalTime;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -27,8 +28,8 @@ public class SyncProducer {
         producer.start();
 
         //4.创建消息对象，指定主题topic,tag和消息体
-        for(int i=1;i<=10;i++){
-            Message msg = new Message("base", "tag1", ("hello world"+i).getBytes(StandardCharsets.UTF_8));
+        for(int i=1;i<=1;i++){
+            Message msg = new Message("base", "tag1", ("hello world:"+ LocalTime.now()).getBytes(StandardCharsets.UTF_8));
             //5.发送消息
             SendResult result = producer.send(msg);
             //结果数据获取

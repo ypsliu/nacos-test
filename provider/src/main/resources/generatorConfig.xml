@@ -55,14 +55,18 @@
         <table tableName="person" domainObjectName="Person"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
+               selectByExampleQueryId="false" catalog="demo">
+            <property name="useActualColumnNames" value="false"></property>
+            <property name="ignoreQualifiersAtRuntime" value="true"></property>
             <!-- 指定列的数据类型 -->
             <columnOverride column="create_time" javaType="java.time.LocalDateTime"/>
         </table>
         <table tableName="country" domainObjectName="Country"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
+               selectByExampleQueryId="false" catalog="demo">
+            <property name="useActualColumnNames" value="false"></property>
+            <property name="ignoreQualifiersAtRuntime" value="true"></property>
         </table>
     </context>
 </generatorConfiguration>

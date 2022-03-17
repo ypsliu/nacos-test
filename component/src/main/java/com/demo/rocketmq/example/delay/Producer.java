@@ -15,6 +15,8 @@ import java.util.concurrent.TimeUnit;
  * Time: 15:11
  * Created with IntelliJ IDEA
  * Description: 延时消费生产者
+ *
+ * messageDelayLevel = "1s 5s 10s 30s 1m 2m 3m 4m 5m 6m 7m 8m 9m 10m 20m 30m 1h 2h" 18个等级
  */
 public class Producer {
     public static void main(String[] args) throws Exception{
