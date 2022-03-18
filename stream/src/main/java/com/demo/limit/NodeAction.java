@@ -17,6 +17,10 @@ public class NodeAction {
      * @return
      */
     public static void removeEndNode(Node sourceNode){
+        if(sourceNode.getNext() == null){
+            System.out.println("need init windows!");
+            return;
+        }
         Node firstNode = sourceNode;
         while (firstNode.getNext() != null){
             if(firstNode.getNext().getNext()== null){

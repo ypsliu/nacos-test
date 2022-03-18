@@ -1,5 +1,7 @@
 package com.demo.limit;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Created with IntelliJ IDEA.
  * User: lzy
@@ -8,7 +10,7 @@ package com.demo.limit;
  * Description: No Description
  */
 public class Test {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         for(int i=0;i<20;i++){
             new Thread(
                     ()->{
@@ -16,5 +18,17 @@ public class Test {
                     }
             ).start();
         }
+        TimeUnit.SECONDS.sleep(1L);
+        LimitManager.getInstance().limiting("www.baidu.com");
+        TimeUnit.SECONDS.sleep(1L);
+        LimitManager.getInstance().limiting("www.baidu.com");
+        TimeUnit.SECONDS.sleep(1L);
+        LimitManager.getInstance().limiting("www.baidu.com");
+        LimitManager.getInstance().limiting("www.baidu.com");
+
+    }
+
+    public static void main1(String[] args) {
+
     }
 }

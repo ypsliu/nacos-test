@@ -79,6 +79,7 @@ public class SlidingTimeWindow {
             return false;
         }
         lastNode.addCount();
+        System.out.println(lastNode);
         return true;
     }
 

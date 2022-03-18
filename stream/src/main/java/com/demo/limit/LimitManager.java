@@ -26,17 +26,23 @@ public class LimitManager {
     /**
      * 限制规则时间总长度（秒）
      */
-    private static final Long WINDOWS_TIME = 10*60L;
+    private static final Long WINDOWS_TIME = 1L;
 
     /**
-     * 限制规则总次数
+     * 时间格式
      */
-    private static final int LIMIT_NUMS = 5;
+    private static final TimeUnit TIME_UNIT = TimeUnit.SECONDS;
 
     /**
      * 时间块颗粒度（越多越精确，效率越低）
      */
-    private static final int SLOT_NUMS = 10;
+    private static final int SLOT_NUMS = 1;
+
+    /**
+     * 限制规则总次数
+     */
+    private static final int LIMIT_NUMS = 1;
+
 
     private static final Map<String,SlidingTimeWindow> limit_map
             = new ConcurrentHashMap<>();
@@ -51,7 +57,7 @@ public class LimitManager {
             if(!limit_map.containsKey(url)){
                 //初始化限流规则
                 limit_map.put(url,
-                        new SlidingTimeWindow(SLOT_NUMS,LIMIT_NUMS,WINDOWS_TIME, TimeUnit.SECONDS));
+                        new SlidingTimeWindow(SLOT_NUMS,LIMIT_NUMS,WINDOWS_TIME,TIME_UNIT));
             }
             SlidingTimeWindow slidingTimeWindow = limit_map.get(url);
             boolean pass =  slidingTimeWindow.checkAndAdd();

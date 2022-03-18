@@ -10,6 +10,8 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.atomic.AtomicStampedReference;
 import java.util.concurrent.atomic.LongAdder;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.function.Consumer;
 
 /**
@@ -168,5 +170,19 @@ public class ThreadDemo {
 
         //解决ABA问题
         new AtomicStampedReference(new Person(),1);
+
+        /**
+         * lock 使用规范
+         */
+        Lock lock = new ReentrantLock();
+        Boolean isLocked = lock.tryLock();
+        if(isLocked){
+            try {
+//            doSomething();
+//            doOthers();
+            } finally {
+                lock.unlock();
+            }
+        }
     }
 }

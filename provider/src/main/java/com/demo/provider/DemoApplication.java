@@ -18,6 +18,7 @@ public class DemoApplication {
         // 禁用命令行参数
         springApplication.setAddCommandLineProperties(false);
         springApplication.run(args);
+
     }
 
 }
