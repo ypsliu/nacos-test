@@ -10,15 +10,19 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class HutoolDemo {
-    public static void main1(String[] args) {
+    public static void main(String[] args) {
 //        Convert.convertQuietly()
         String string = "www.baidu.com/usr=123&pas=456";
         String string1 = "www.baidu.com/usr=123&pas=4562";
         System.out.println(string.hashCode());
         System.out.println(string1.hashCode());
+
+        String str = "吉";
+        String str1 = "\uD842\uDFB7";
+        System.out.println(str1);
     }
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         Long startTime = System.currentTimeMillis();
         for(int i=0;i<5120;i++){
             //FIXME 对于 trace/debug/info 级别的日志输出，必须进行日志级别的开关判断
