@@ -3,6 +3,7 @@ package com.demo.provider.controller;
 import com.demo.common.HttpUtils.constant.status.BaseStatusCode;
 import com.demo.common.HttpUtils.constant.status.IStatusCode;
 import com.demo.common.HttpUtils.constant.target.ResponseDataBody;
+import com.demo.common.HttpUtils.domain.response.BaseResponseDto;
 import com.demo.provider.domain.User;
 import com.demo.provider.targer.checkToken;
 import com.demo.redisson.operation.RedissonObject;
@@ -42,5 +43,14 @@ public class DemoController {
         return BaseStatusCode.SUCCESS;
     }
 
+    @RequestMapping(value = "/test")
+    public BaseResponseDto test(){
+        User user = redissonObject.getValue("test_user");
+        Assert.notNull(user,"用户不存在");
+        log.info("get user from redis: "+user);
+        //js的number类型有个最大安全值，即2的53次方（9007199254740992），超过这个值就会出现精度丢失的问题
+        user.setId(Long.MAX_VALUE);
+        return new BaseResponseDto<>(BaseStatusCode.SUCCESS,user);
+    }
 
 }

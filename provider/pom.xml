@@ -165,6 +165,15 @@
             <artifactId>common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.guoyixing</groupId>
+            <artifactId>spring-boot-starter-super-scheduled</artifactId>
+        </dependency>
+        <!-- 数据库文档生成工具 螺丝钉-->
+        <dependency>
+            <groupId>cn.smallbun.screw</groupId>
+            <artifactId>screw-core</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

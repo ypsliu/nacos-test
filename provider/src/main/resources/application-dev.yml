@@ -16,6 +16,36 @@ spring:
     redisson:
       # fixme config的配置最好去对应的实体类看下有没有这个属性，和网上直接找的会有一些出入
       file: classpath:/redisson/SingleRedisson.yaml
+  super:
+    scheduled:
+      thread-pool:
+        #线程池大小
+        poolSize: 30
+        #线程名前缀
+        threadNamePrefix: super
+        #设置是否关闭时等待执行中的任务执行完成
+        waitForTasksToCompleteOnShutdown: false
+        #设置此执行器被关闭时等待的最长时间，用于在其余容器继续关闭之前等待剩余任务执行完成
+        #需要将waitForTasksToCompleteOnShutdown设置为true，此配置才起作用
+        awaitTerminationSeconds: 0
+      plug-in:
+        #开启执行标志
+        executionFlag: true
+        #开启定时任务调度日志，日志文件是存在本地磁盘上的
+        executionLog: true
+        #日志存放位置，不设置默认位置为程序同级目录下
+        logPath: E:/tmp/log-scheduled
+        #开启基于zookeeper的集群模式
+        colony: false
+        #zookeeper集群模式的定时任务服务名，相同名称的定时任务名称服务会被统一管理
+        colonyName: test
+#      zookeeper:
+#        #设置zookeeper地址，zookeeper集群多个地址用英文逗号隔开
+#        url: 127.0.0.1:2181
+#        #设置zookeeper session超时时间
+#        sessionTimeout: 60000
+#        #设置zookeeper连接超时时间
+#        connectionTimeout :60000
 mybatis-plus:
   #  classpath:/com/*/*/mapper/*Mapper.xml 放在resources目录下classpath:/mapper/**.xml
   mapper-locations: classpath:/mapper/**.xml
