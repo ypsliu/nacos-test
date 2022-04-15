@@ -1,0 +1,12 @@
+#开发环境
+log:
+  level: INFO
+server:
+  port: 9199
+  servlet:
+    context-path: /demo
+logging:
+  config: classpath:logback-spring.xml
+lzy:
+  elasticsearch:
+    host: 127.0.0.1:9200 #多个结点中间用逗号分隔
