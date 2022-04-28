@@ -1,4 +1,4 @@
-package com.demo;
+package com.demo.hutool;
 
 import java.util.Objects;
 
@@ -26,6 +26,15 @@ public class EqualsDemo {
         System.out.println(i7.equals(i8)); //true
 
 
+        /**
+         * 当代码中使用第一种方式创建字符串对象时，JVM 首先会检查该对象是否在字符串常量池
+         * 中，如果在，就返回该对象引用，否则新的字符串将在常量池中被创建。这种方式可以减少
+         * 同一个值的字符串对象的重复创建，节约内存。
+         * String str = new String(“abc”) 这种方式，首先在编译类文件时，"abc"常量字符串将
+         * 会放入到常量结构中，在类加载时，“abc"将会在常量池中创建；其次，在调用 new 时，
+         * JVM 命令将会调用 String 的构造函数，同时引用常量池中的"abc” 字符串，在堆内存中
+         * 创建一个 String 对象；最后，str 将引用 String 对象。
+         */
         String e = "abc";
         String f = "abc";
         String g = new String("abc");
@@ -40,5 +49,10 @@ public class EqualsDemo {
         System.out.println(Objects.equals(i9,l1));//false
         //我们在使用Objects.equals方法，判断两个值是否相等时，一定要保证两个入参的类型要一致。
         // 否则即使两个值相同，但其结果仍然会返回false，这是一个大坑
+
+        String i = e.intern();
+        System.out.println(i == f);//true
+        System.out.println(i == e);//true
+        System.out.println(i == g);//false
     }
 }

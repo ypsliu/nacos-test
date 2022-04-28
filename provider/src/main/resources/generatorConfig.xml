@@ -28,7 +28,7 @@
         </javaTypeResolver>
         <!-- targetPackage：生成的实体类所在的包 -->
         <!-- targetProject：生成的实体类所在的硬盘位置 -->
-        <javaModelGenerator targetPackage="com.demo.provider.domain"
+        <javaModelGenerator targetPackage="com.demo.provider.entity"
                             targetProject="src/main/java">
             <!-- 是否允许子包 -->
             <property name="enableSubPackages" value="false"/>

@@ -1,6 +1,6 @@
 package com.demo.provider.mapper;
 
-import com.demo.provider.domain.Person;
+import com.demo.provider.entity.Person;
 
 public interface PersonMapper {
     int deleteByPrimaryKey(Long id);

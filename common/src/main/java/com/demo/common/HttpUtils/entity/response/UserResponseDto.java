@@ -1,4 +1,4 @@
-package com.demo.common.HttpUtils.domain.response;
+package com.demo.common.HttpUtils.entity.response;
 
 
 import com.fasterxml.jackson.annotation.JsonView;

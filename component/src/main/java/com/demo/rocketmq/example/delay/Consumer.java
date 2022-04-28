@@ -1,5 +1,6 @@
 package com.demo.rocketmq.example.delay;
 
+import io.netty.channel.DefaultChannelId;
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
@@ -7,6 +8,7 @@ import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
 import org.apache.rocketmq.common.message.MessageExt;
 import org.apache.rocketmq.common.protocol.heartbeat.MessageModel;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -22,7 +24,7 @@ public class Consumer {
         //1.创建消费者consumer,制定消费者组名
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("group1");
         //2.指定NameServer地址
-        consumer.setNamesrvAddr("localhost:9876");
+        consumer.setNamesrvAddr("127.0.0.1:9876");
         //3.订阅主题Topic和Tage
 //        consumer.subscribe("base","*"); //消费topic下所有tag
         consumer.subscribe("delay","*");
@@ -34,14 +36,16 @@ public class Consumer {
                 list.stream()
                         .forEach(
                         messageExt -> {
-                            System.out.println("消息id+【"+messageExt.getMsgId()+"】"
-                            +"延迟时间："+(System.currentTimeMillis()-messageExt.getStoreTimestamp()));
+                            System.out.println("消费时间："+LocalDateTime.now()+"消息id+【"+messageExt.getMsgId()+"】"
+                            +"，延迟时间："+(System.currentTimeMillis()-messageExt.getStoreTimestamp()));
                         }
                 );
                 return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
             }
         });
         //5.启动消费者
+
+        DefaultChannelId.newInstance();
         consumer.start();
         System.out.println("consumer:启动成功");
     }

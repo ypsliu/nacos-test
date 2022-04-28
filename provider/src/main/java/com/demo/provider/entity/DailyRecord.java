@@ -1,4 +1,4 @@
-package com.demo.provider.domain;
+package com.demo.provider.entity;
 
 import com.alibaba.excel.annotation.ExcelProperty;
 import com.alibaba.excel.annotation.format.DateTimeFormat;

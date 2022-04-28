@@ -1,6 +1,6 @@
 package com.demo.provider.mapper;
 
-import com.demo.provider.domain.Country;
+import com.demo.provider.entity.Country;
 
 public interface CountryMapper {
     int deleteByPrimaryKey(String code);

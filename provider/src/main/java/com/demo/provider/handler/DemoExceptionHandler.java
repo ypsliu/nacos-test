@@ -1,7 +1,7 @@
 package com.demo.provider.handler;
 
-import com.demo.common.HttpUtils.domain.response.BaseResponseDto;
-import com.demo.common.HttpUtils.domain.response.ResponseUtil;
+import com.demo.common.HttpUtils.entity.response.BaseResponseDto;
+import com.demo.common.HttpUtils.entity.response.ResponseUtil;
 import com.demo.common.HttpUtils.exception.BaseException;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.ArrayList;

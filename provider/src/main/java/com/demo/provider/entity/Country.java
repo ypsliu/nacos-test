@@ -1,4 +1,4 @@
-package com.demo.provider.domain;
+package com.demo.provider.entity;
 
 public class Country {
     private String code;

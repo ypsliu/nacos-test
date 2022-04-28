@@ -1,4 +1,4 @@
-package com.demo.common.HttpUtils.domain.specification;
+package com.demo.common.HttpUtils.entity.specification;
 
 /**
  * Created with IntelliJ IDEA.

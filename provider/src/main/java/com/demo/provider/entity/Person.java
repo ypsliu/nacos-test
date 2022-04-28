@@ -1,4 +1,4 @@
-package com.demo.provider.domain;
+package com.demo.provider.entity;
 
 import java.time.LocalDateTime;
 import java.util.Date;

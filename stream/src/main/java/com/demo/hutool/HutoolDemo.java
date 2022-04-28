@@ -20,6 +20,9 @@ public class HutoolDemo {
         String str = "吉";
         String str1 = "\uD842\uDFB7";
         System.out.println(str1);
+
+        System.out.println(-1 << 3);
+        System.out.println(15 ^ 1);
     }
 
     public static void main1(String[] args) {

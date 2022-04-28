@@ -1,6 +1,6 @@
 package com.demo.provider.service;
 
-import com.demo.provider.domain.User;
+import com.demo.provider.entity.User;
 import com.demo.provider.mapper.UserMapper;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;

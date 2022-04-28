@@ -1,6 +1,6 @@
 package com.demo.consumer.openFeign;
 
-import com.demo.consumer.domain.Order;
+import com.demo.consumer.entity.Order;
 import org.springframework.context.annotation.Configuration;
 
 /**

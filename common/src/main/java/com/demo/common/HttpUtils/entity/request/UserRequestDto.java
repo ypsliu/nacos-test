@@ -1,4 +1,4 @@
-package com.demo.common.HttpUtils.domain.request;
+package com.demo.common.HttpUtils.entity.request;
 
 import com.demo.common.HttpUtils.validate.checkModel.CaseCheck;
 import com.demo.common.HttpUtils.validate.checkModel.CaseMode;

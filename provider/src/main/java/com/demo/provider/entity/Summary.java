@@ -1,4 +1,4 @@
-package com.demo.provider.domain;
+package com.demo.provider.entity;
 
 import com.alibaba.excel.annotation.ExcelProperty;
 import com.alibaba.excel.annotation.format.DateTimeFormat;
@@ -9,7 +9,6 @@ import com.alibaba.excel.annotation.write.style.HeadRowHeight;
 import lombok.*;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 /**
  * @author lzy

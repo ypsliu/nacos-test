@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.demo.provider.mapper.CountryMapper">
-  <resultMap id="BaseResultMap" type="com.demo.provider.domain.Country">
+  <resultMap id="BaseResultMap" type="com.demo.provider.entity.Country">
     <constructor>
       <idArg column="Code" javaType="java.lang.String" jdbcType="CHAR" />
       <arg column="Name" javaType="java.lang.String" jdbcType="CHAR" />
@@ -34,7 +34,7 @@
     delete from country
     where Code = #{code,jdbcType=CHAR}
   </delete>
-  <insert id="insert" parameterType="com.demo.provider.domain.Country">
+  <insert id="insert" parameterType="com.demo.provider.entity.Country">
     insert into country (Code, Name, Continent, 
       Region, SurfaceArea, IndepYear, 
       Population, LifeExpectancy, GNP, 
@@ -48,7 +48,7 @@
       #{headofstate,jdbcType=CHAR}, #{capital,jdbcType=INTEGER}, #{code2,jdbcType=CHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.demo.provider.domain.Country">
+  <insert id="insertSelective" parameterType="com.demo.provider.entity.Country">
     insert into country
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="code != null">
@@ -145,7 +145,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.demo.provider.domain.Country">
+  <update id="updateByPrimaryKeySelective" parameterType="com.demo.provider.entity.Country">
     update country
     <set>
       <if test="name != null">
@@ -193,7 +193,7 @@
     </set>
     where Code = #{code,jdbcType=CHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.demo.provider.domain.Country">
+  <update id="updateByPrimaryKey" parameterType="com.demo.provider.entity.Country">
     update country
     set Name = #{name,jdbcType=CHAR},
       Continent = #{continent,jdbcType=CHAR},

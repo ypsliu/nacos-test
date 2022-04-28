@@ -1,6 +1,6 @@
 package com.demo.provider.mapper;
 
-import com.demo.provider.domain.DailyRecord;
+import com.demo.provider.entity.DailyRecord;
 
 import java.util.List;
 

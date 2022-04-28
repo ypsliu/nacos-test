@@ -1,4 +1,4 @@
-package com.demo.provider.domain;
+package com.demo.provider.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.*;

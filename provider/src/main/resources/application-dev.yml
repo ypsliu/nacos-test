@@ -13,9 +13,12 @@ spring:
     password: eslink
     type: com.alibaba.druid.pool.DruidDataSource
   redis:
-    redisson:
-      # fixme config的配置最好去对应的实体类看下有没有这个属性，和网上直接找的会有一些出入
-      file: classpath:/redisson/SingleRedisson.yaml
+#    redisson:
+#      # fixme config的配置最好去对应的实体类看下有没有这个属性，和网上直接找的会有一些出入
+#      file: classpath:/redisson/SingleRedisson.yaml
+    host: 127.0.0.1
+    port: 6379
+    password: eslink
   super:
     scheduled:
       thread-pool:

@@ -1,4 +1,4 @@
-package com.demo.common.HttpUtils.domain.response;
+package com.demo.common.HttpUtils.entity.response;
 
 
 import com.demo.common.HttpUtils.constant.status.BaseStatusCode;

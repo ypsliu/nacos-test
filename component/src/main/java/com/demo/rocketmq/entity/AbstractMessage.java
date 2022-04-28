@@ -1,4 +1,4 @@
-package com.demo.rocketmq.domain;
+package com.demo.rocketmq.entity;
 
 import com.demo.rocketmq.constant.MQSendTypeEnum;
 
