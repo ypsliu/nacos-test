@@ -2,7 +2,8 @@ package com.demo.image.drewnoakes;
 
 
 import cn.hutool.http.HttpUtil;
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.JSONObject;
 import com.drew.imaging.ImageMetadataReader;
 import com.drew.imaging.ImageProcessingException;
 import com.drew.metadata.Directory;
@@ -123,7 +124,7 @@ public class ImgTest {
         String url = "http://api.map.baidu.com/reverse_geocoding/v3/?ak=" + apiKey + "&output=json&coordtype=wgs84ll&location=" + (gps_latitude + "," + gps_longitude);
         System.err.println("【url】" + url);
         res = HttpUtil.get(url);
-        JSONObject object = JSONObject.parseObject(res);
+        JSONObject object = JSON.parseObject(res);
         if (object.containsKey("result")) {
             JSONObject result = object.getJSONObject("result");
             if (result.containsKey("addressComponent")) {

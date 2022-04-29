@@ -112,8 +112,8 @@
             <artifactId>easyexcel</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
+            <groupId>com.alibaba.fastjson2</groupId>
+            <artifactId>fastjson2</artifactId>
         </dependency>
         <!-- 分页插件 移除mybatis 与baomidou冲突-->
         <dependency>
