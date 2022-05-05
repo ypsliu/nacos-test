@@ -22,6 +22,7 @@
         <module>web-monitor</module>
         <module>spring-lzy</module>
         <module>elastic-lzy</module>
+        <module>excel-api</module>
     </modules>
     <name>nacos</name>
     <description>Demo project for Spring Boot</description>
