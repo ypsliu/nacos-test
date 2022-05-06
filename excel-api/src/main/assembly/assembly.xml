@@ -17,6 +17,7 @@
             <directory>target</directory>
             <includes>
                 <include>*.jar</include>
+                <include>*.properties</include>
             </includes>
             <outputDirectory>${file.separator}</outputDirectory>
         </fileSet>
@@ -25,12 +26,12 @@
             <outputDirectory>${file.separator}lib</outputDirectory>
         </fileSet>
         <fileSet>
-            <directory>target/configs</directory>
+            <directory>target/config</directory>
             <!--<includes>
                 <include>*.yml</include>
                 <include>logback.xml</include>
             </includes>-->
-            <outputDirectory>${file.separator}configs</outputDirectory>
+            <outputDirectory>${file.separator}config</outputDirectory>
         </fileSet>
 
         <!-- 从源目录拷贝文件去压缩 -->
