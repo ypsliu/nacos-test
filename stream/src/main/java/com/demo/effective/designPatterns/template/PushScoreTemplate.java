@@ -1,0 +1,16 @@
+package com.demo.effective.designPatterns.template;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: lzy
+ * Date: 2022/5/7
+ * Time: 15:00
+ * Description:积分的具体模板
+ */
+public class PushScoreTemplate  extends AbstractPushTemplate{
+
+    @Override
+    protected void execute(int customerId, String shopName) {
+        System.out.println("会员:" + customerId + ",你好，" + shopName + "送您10个积分");
+    }
+}

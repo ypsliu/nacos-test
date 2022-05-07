@@ -65,7 +65,7 @@
                         <addMavenDescriptor>false</addMavenDescriptor>
                         <!-- 给清单文件添加键值对(配置文件外置) -->
                         <manifestEntries>
-                          <!--  <Class-Path>config/</Class-Path>-->
+                            <Class-Path>./</Class-Path>
                             <!--   <Permissions>${Permissions}</Permissions>
                                <Caller-Allowable-Codebase>${Caller-Allowable-Codebase}</Caller-Allowable-Codebase>-->
                         </manifestEntries>
