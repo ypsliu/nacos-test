@@ -98,6 +98,11 @@ public class SnowflakeIdWorker {
 
         //如果当前时间小于上一次ID生成的时间戳，说明系统时钟回退过这个时候应当抛出异常
         if (timestamp < lastTimestamp) {
+            //时钟回拨问题
+            //1.调用下面 clock back 中方法 并修改121行 代码 sequence = 0L 为 sequence = basicSequence;
+            //2.是否可以尝试调用其他id生成逻辑 例如 nanoId
+//            System.out.println("Clock moved backwards");
+//            return handleMovedBackwards(timestamp);
             throw new RuntimeException(
                     String.format("Clock moved backwards.  Refusing to generate id for %d milliseconds", lastTimestamp - timestamp));
         }
@@ -181,6 +186,27 @@ public class SnowflakeIdWorker {
         long id = idWorker.nextId();
         return id;
     }
+    //==============================clock back=============================================
+    /** 步长, 1024 */
+    private static long stepSize = 2 << 9;
+    /** 基础序列号, 每发生一次时钟回拨, basicSequence += stepSize */
+    private long basicSequence = 0L;
+    private long handleMovedBackwards(long timestamp) {
+        basicSequence += stepSize;
+        if (basicSequence == sequenceMask + 1) {
+            basicSequence = 0;
+            timestamp = tilNextMillis(timestamp);
+        }
+        sequence = basicSequence;
+
+        lastTimestamp = timestamp;;
+
+        return ((timestamp - twepoch) << timestampLeftShift)
+                | (dataCenterId << dataCenterIdShift)
+                | (workerId << workerIdShift)
+                | sequence;
+    }
+
 
     //==============================Test=============================================
     /** 测试 */
