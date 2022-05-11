@@ -53,5 +53,12 @@ public class OptionalDemo {
                     System.out.println("str6:"+str6);
                 }
         );
+
+        String str7 = null;
+        Optional.ofNullable(str7).orElseThrow(
+                ()->{
+                    return new RuntimeException("str7 is null");
+                }
+        );
     }
 }
