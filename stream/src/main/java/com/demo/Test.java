@@ -1,9 +1,6 @@
 package com.demo;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -30,5 +27,7 @@ public class Test {
         list.add("s");
         list.add(1,"s");
         list.remove(1);
+
+        HashMap<String, String> map = new HashMap<>();
     }
 }
