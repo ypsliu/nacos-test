@@ -8,17 +8,17 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/demo?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://192.168.1.77:3306/lzy?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
-    password: eslink
+    password: root
     type: com.alibaba.druid.pool.DruidDataSource
   redis:
 #    redisson:
 #      # fixme config的配置最好去对应的实体类看下有没有这个属性，和网上直接找的会有一些出入
 #      file: classpath:/redisson/SingleRedisson.yaml
-    host: 127.0.0.1
+    host: 192.168.1.77
     port: 6379
-    password: eslink
+    password: lzy
   super:
     scheduled:
       thread-pool:
