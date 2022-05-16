@@ -52,5 +52,14 @@
             <groupId>com.aventrix.jnanoid</groupId>
             <artifactId>jnanoid</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.maxmind.geoip2</groupId>
+            <artifactId>geoip2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.maxmind.db</groupId>
+            <artifactId>maxmind-db</artifactId>
+        </dependency>
     </dependencies>
 </project>
