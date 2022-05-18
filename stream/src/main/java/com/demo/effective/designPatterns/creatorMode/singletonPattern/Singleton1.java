@@ -1,4 +1,4 @@
-package com.demo.effective.designPatterns.singleton;
+package com.demo.effective.designPatterns.creatorMode.singletonPattern;
 
 /**
  * @author lz

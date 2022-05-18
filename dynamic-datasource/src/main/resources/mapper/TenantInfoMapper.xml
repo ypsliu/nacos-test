@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.dynamic.dao.TenantInfoMapper">
+  <resultMap id="BaseResultMap" type="com.demo.dynamic.entity.TenantInfo">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="kp" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="tenant_id" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="tenant_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="tenant_desc" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="create_source" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="gmt_create" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="gmt_modified" javaType="java.lang.Long" jdbcType="BIGINT" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, kp, tenant_id, tenant_name, tenant_desc, create_source, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from nacos.tenant_info
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from nacos..tenant_info
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.demo.dynamic.entity.TenantInfo">
+    insert into nacos.tenant_info (id, kp, tenant_id,
+      tenant_name, tenant_desc, create_source, 
+      gmt_create, gmt_modified)
+    values (#{id,jdbcType=BIGINT}, #{kp,jdbcType=VARCHAR}, #{tenantId,jdbcType=VARCHAR}, 
+      #{tenantName,jdbcType=VARCHAR}, #{tenantDesc,jdbcType=VARCHAR}, #{createSource,jdbcType=VARCHAR}, 
+      #{gmtCreate,jdbcType=BIGINT}, #{gmtModified,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.demo.dynamic.entity.TenantInfo">
+    insert into nacos.tenant_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="kp != null">
+        kp,
+      </if>
+      <if test="tenantId != null">
+        tenant_id,
+      </if>
+      <if test="tenantName != null">
+        tenant_name,
+      </if>
+      <if test="tenantDesc != null">
+        tenant_desc,
+      </if>
+      <if test="createSource != null">
+        create_source,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="kp != null">
+        #{kp,jdbcType=VARCHAR},
+      </if>
+      <if test="tenantId != null">
+        #{tenantId,jdbcType=VARCHAR},
+      </if>
+      <if test="tenantName != null">
+        #{tenantName,jdbcType=VARCHAR},
+      </if>
+      <if test="tenantDesc != null">
+        #{tenantDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="createSource != null">
+        #{createSource,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=BIGINT},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.demo.dynamic.entity.TenantInfo">
+    update nacos.tenant_info
+    <set>
+      <if test="kp != null">
+        kp = #{kp,jdbcType=VARCHAR},
+      </if>
+      <if test="tenantId != null">
+        tenant_id = #{tenantId,jdbcType=VARCHAR},
+      </if>
+      <if test="tenantName != null">
+        tenant_name = #{tenantName,jdbcType=VARCHAR},
+      </if>
+      <if test="tenantDesc != null">
+        tenant_desc = #{tenantDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="createSource != null">
+        create_source = #{createSource,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=BIGINT},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.demo.dynamic.entity.TenantInfo">
+    update nacos.tenant_info
+    set kp = #{kp,jdbcType=VARCHAR},
+      tenant_id = #{tenantId,jdbcType=VARCHAR},
+      tenant_name = #{tenantName,jdbcType=VARCHAR},
+      tenant_desc = #{tenantDesc,jdbcType=VARCHAR},
+      create_source = #{createSource,jdbcType=VARCHAR},
+      gmt_create = #{gmtCreate,jdbcType=BIGINT},
+      gmt_modified = #{gmtModified,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

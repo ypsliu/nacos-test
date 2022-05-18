@@ -1,0 +1,30 @@
+#开发环境
+log:
+  level: INFO
+server:
+  port: 8888
+spring:
+  datasource:
+    lzy-master:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/nacos?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false
+      username: root
+      password: eslink
+      type: com.alibaba.druid.pool.DruidDataSource
+    lzy-salve:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://192.168.9.142:3306/nacos?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false
+      username: root
+      password: 123456
+      type: com.alibaba.druid.pool.DruidDataSource
+mybatis:
+  #  classpath:/com/*/*/mapper/*Mapper.xml 放在resources目录下classpath:/mapper/**.xml
+  mapper-locations: classpath:/mapper/**.xml
+#  type-aliases-package: com.example.demo.domain
+#  configuration:
+#  开启这个的作用是可以让数据库中的id与pojo中的id对应
+#  map-underscore-to-camel-case: true
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  config: classpath:logback-spring.xml

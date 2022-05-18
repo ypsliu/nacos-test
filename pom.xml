@@ -23,6 +23,7 @@
         <module>spring-lzy</module>
         <module>elastic-lzy</module>
         <module>excel-api</module>
+        <module>dynamic-datasource</module>
     </modules>
     <name>nacos</name>
     <description>Demo project for Spring Boot</description>
