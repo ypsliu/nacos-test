@@ -3,13 +3,12 @@ package com.demo.dynamic.service;
 import com.demo.dynamic.constant.Constant;
 import com.demo.dynamic.dao.TenantInfoMapper;
 import com.demo.dynamic.entity.TenantInfo;
-import com.demo.dynamic.target.ChooseSource;
+import com.demo.dynamic.annotation.ChooseSource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.

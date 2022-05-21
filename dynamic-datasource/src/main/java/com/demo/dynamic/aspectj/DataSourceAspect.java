@@ -2,7 +2,7 @@ package com.demo.dynamic.aspectj;
 
 
 import com.demo.dynamic.config.DataSourceHolder;
-import com.demo.dynamic.target.ChooseSource;
+import com.demo.dynamic.annotation.ChooseSource;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
@@ -28,7 +28,7 @@ import java.lang.reflect.Method;
 @Component
 @Slf4j
 public class DataSourceAspect {
-    @Pointcut("@annotation(com.demo.dynamic.target.ChooseSource)")
+    @Pointcut("@annotation(com.demo.dynamic.annotation.ChooseSource)")
     public void pointcut() {
     }
 
