@@ -24,6 +24,7 @@ import javax.annotation.Resource;
 @ResponseDataBody
 @Slf4j
 public class DemoController {
+
     @Resource
     private RedissonObject redissonObject;
 
@@ -52,4 +53,27 @@ public class DemoController {
         return new BaseResponseDto<>(BaseStatusCode.SUCCESS,user);
     }
 
+    private static ThreadLocal<Integer> threadLocal = new ThreadLocal<Integer>(){
+        @Override
+        protected Integer initialValue(){
+            return 0;
+        }
+    };
+    @RequestMapping(value = "/thread")
+    public IStatusCode threadLocal(){
+        log.info("{} -> {}", Thread.currentThread().getName(), threadLocal.get()+1);
+        threadLocal.remove();
+        return BaseStatusCode.SUCCESS;
+    }
+    private ThreadLocal<Integer> i = new ThreadLocal<>();
+    @RequestMapping(value = "/thread1")
+    public IStatusCode threadLocal1(){
+        if (i.get() == null) {
+            i.set(0);
+        }
+        i.set(i.get() + 1);
+        log.info("{} -> {}", Thread.currentThread().getName(), i.get());
+        i.remove();
+        return BaseStatusCode.SUCCESS;
+    }
 }
