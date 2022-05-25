@@ -295,6 +295,14 @@
                 <artifactId>maxmind-db</artifactId>
                 <version>1.0.0</version>
             </dependency>
+
+            <!-- 集合工具类 apache commons collections -->
+            <!-- LRUMap  -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>4.4</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>
