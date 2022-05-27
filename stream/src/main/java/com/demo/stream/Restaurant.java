@@ -367,7 +367,11 @@ public class Restaurant {
         IntStream.range(0,100)
                 .filter(x -> x%2 ==0)
                 .forEach(System.out::print);//[a,b) 含头不含尾
-
+        //创建一个1-10的数组
+        List<Integer> list3 = IntStream.rangeClosed(0,10)
+                .parallel()
+                .boxed()
+                .collect(Collectors.toList());
         /**
          * 3.数值流应用：勾股数
          */

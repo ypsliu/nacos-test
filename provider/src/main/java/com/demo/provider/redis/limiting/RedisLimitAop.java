@@ -1,4 +1,4 @@
-package com.demo.provider.redis;
+package com.demo.provider.redis.limiting;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
-import org.springframework.data.redis.core.script.RedisScript;
 import org.springframework.scripting.support.ResourceScriptSource;
 import org.springframework.stereotype.Component;
 
@@ -37,7 +36,7 @@ public class RedisLimitAop {
     private DefaultRedisScript<Long> redisScript;
 
 
-    @Pointcut("@annotation(com.demo.provider.redis.RedisLimit)")
+    @Pointcut("@annotation(com.demo.provider.redis.limiting.RedisLimit)")
     private void check() {
 
     }

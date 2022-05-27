@@ -1,4 +1,4 @@
-package com.demo.provider.redis;
+package com.demo.provider.redis.limiting;
 
 import java.lang.annotation.*;
 
