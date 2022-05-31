@@ -1,6 +1,5 @@
 package com.demo.config;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +20,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * @author liouwb
+ * Created with IntelliJ IDEA.
+ * User: lzy
+ * Date: 2022/5/31
+ * Time: 16:51
+ * Description: No Description
  */
 @Configuration
 @EnableSwagger2
@@ -70,3 +73,4 @@ public class Knife4jConfig {
                 new ArrayList<>());
     }
 }
+

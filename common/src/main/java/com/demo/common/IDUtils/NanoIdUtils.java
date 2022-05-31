@@ -1,6 +1,7 @@
 package com.demo.common.IDUtils;
 
 import java.security.SecureRandom;
+import java.time.LocalDateTime;
 import java.util.Random;
 
 /**
@@ -21,7 +22,7 @@ public class NanoIdUtils {
         //Do Nothing
     }
     public static String randomNanoId() {
-        return randomNanoId(DEFAULT_NUMBER_GENERATOR, DEFAULT_ALPHABET, 21);
+        return randomNanoId(DEFAULT_NUMBER_GENERATOR, DEFAULT_ALPHABET, DEFAULT_SIZE);
     }
 
     public static String randomNanoId(Random random, char[] alphabet, int size) {
@@ -60,6 +61,8 @@ public class NanoIdUtils {
     public static void main(String[] args) {
         String nanoId = NanoIdUtils.randomNanoId();
         System.out.println(nanoId);
+        System.out.println(System.currentTimeMillis());
+        System.out.println(System.nanoTime());
     }
 }
 
