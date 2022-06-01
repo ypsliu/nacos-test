@@ -24,6 +24,7 @@
         <module>elastic-lzy</module>
         <module>excel-api</module>
         <module>dynamic-datasource</module>
+        <module>lottery</module>
     </modules>
     <name>nacos</name>
     <description>Demo project for Spring Boot</description>
