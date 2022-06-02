@@ -1,5 +1,11 @@
 package com.demo;
 
+import cn.hutool.core.bean.BeanUtil;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.openjdk.jol.vm.VM;
+
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -73,5 +79,31 @@ public class Test {
                 .boxed()
                 .collect(Collectors.toList());
         System.out.println(list3);
+    }
+
+    @org.junit.Test
+    public void copyTest(){
+        User u1 = new User(1,"lzy",23);
+        User u2 = new User(2,"LZY",25);
+
+        System.out.println(VM.current().addressOf(u2));
+        BeanUtil.copyProperties(u1,u2,"id");
+        System.out.println(VM.current().addressOf(u2));
+        System.out.println(u2);
+        System.out.println(test());
+    }
+
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    class User{
+        private int id;
+        private String name;
+        private int age;
+    }
+
+    private boolean test(){
+        Boolean result ;
+        return result = true;
     }
 }
