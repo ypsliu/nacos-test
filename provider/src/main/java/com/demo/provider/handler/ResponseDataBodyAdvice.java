@@ -22,7 +22,12 @@ import java.lang.annotation.Annotation;
  * User: lzy
  * Date: 2021/12/9
  * Time: 17:48
- * Description: No Description
+ * Description:
+ * SpringMVC 中给我们提供了 ResponseBodyAdvice 和 RequestBodyAdvice，利用这两个工具可以对请求和响应进行预处理，非常方便
+ * ResponseBodyAdvice 和 RequestBodyAdvice 的用法，
+ * RequestBodyAdvice 在做解密的时候倒是没啥问题，而 ResponseBodyAdvice 在做加密的时候则会有一些局限
+ * ResponseBodyAdvice 在你使用了 @ResponseBody 注解的时候才会生效，
+ * RequestBodyAdvice 在你使用了 @RequestBody 注解的时候才会生效
  */
 @RestControllerAdvice(basePackages = "com.demo.provider.controller")
 @Order(Ordered.LOWEST_PRECEDENCE)//order拦截顺序
