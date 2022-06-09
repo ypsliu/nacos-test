@@ -11,7 +11,7 @@ public class B extends A{
     static {
         System.out.println("B.class load");
     }
-    public static  int value = 123;
+//    public static  int value = 123;
     public B(){
         System.out.println("Object B create");
     }
