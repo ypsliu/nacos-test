@@ -1,6 +1,6 @@
 singleServerConfig:
  address: "redis://127.0.0.1:6379"
- password: lzyf
+ password: eslink
  database: 0
 threads: 2
 nettyThreads: 2
