@@ -43,7 +43,5 @@ public class Test {
 //        C.said();
         System.out.println(B.value);
 
-
-
     }
 }

@@ -1,6 +1,7 @@
 package com.demo;
 
 import cn.hutool.core.bean.BeanUtil;
+import com.demo.stream.Person;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,6 +21,7 @@ import java.util.stream.Stream;
  */
 public class Test {
     public static void main(String[] args) {
+
         short s1 = 1;
         s1 = (short) (s1 +1);
         s1 += 1; //有隐含的强制类型转换。
@@ -106,4 +108,5 @@ public class Test {
         Boolean result ;
         return result = true;
     }
+
 }
