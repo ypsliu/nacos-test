@@ -1,6 +1,8 @@
 package com.demo;
 
 import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.date.DateTime;
+import cn.hutool.core.date.DateUtil;
 import com.demo.stream.Person;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -93,6 +95,13 @@ public class Test {
         System.out.println(VM.current().addressOf(u2));
         System.out.println(u2);
         System.out.println(test());
+    }
+
+    @org.junit.Test
+    public void UTCTest(){
+        String str = "2022-06-29T07:08:53.506Z[UTC]";
+        DateTime dateTime = DateUtil.parseUTC(str);
+        System.out.println(dateTime);
     }
 
     @Data

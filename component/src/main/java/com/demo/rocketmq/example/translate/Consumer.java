@@ -32,12 +32,12 @@ public class Consumer {
             //接收消息内容
             @Override
             public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> list, ConsumeConcurrentlyContext consumeConcurrentlyContext) {
-                list.stream()
-                        .forEach(
-                        messageExt -> {
-                            System.out.println(new String(messageExt.getBody()));
-                        }
-                );
+                for (MessageExt messageExt:list){
+                    System.out.println(messageExt.getTags()+":"+new String(messageExt.getBody()));
+                    if(messageExt.getTags().equals("tag1")){
+                        return ConsumeConcurrentlyStatus.RECONSUME_LATER;
+                    }
+                }
                 return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
             }
         });
