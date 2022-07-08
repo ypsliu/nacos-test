@@ -82,3 +82,15 @@ com:
     test1: ${random.int(10)}
     #10-20的随机数
     test2: ${random.int[10,20]}
+#actuator配置
+#启用shutdown关闭项目
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      # post/application/json http://127.0.0.1:8999/demo/lzy/shutdown
+      base-path: /lzy
