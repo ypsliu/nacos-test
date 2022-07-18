@@ -17,6 +17,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.event.ContextClosedEvent;
 import org.springframework.retry.annotation.EnableRetry;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Component;
 
@@ -33,6 +34,8 @@ import java.util.concurrent.TimeUnit;
 @EnableScheduling
 //启用@Retryable
 @EnableRetry
+//开启异步
+@EnableAsync
 @Slf4j
 public class DemoApplication {
 

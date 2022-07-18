@@ -1,5 +1,6 @@
 package com.demo.provider;
 
+import com.demo.provider.event.OrderService;
 import com.gyx.superscheduled.core.SuperScheduledManager;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -52,6 +53,12 @@ public class ApplicationTests {
         }
         //修改定时任务执行周期
         superScheduledManager.setScheduledCron(name, "0/5 * * * * ?");
+    }
+
+    @Autowired private OrderService orderService;
+    @Test
+    public void buyOrderTest() {
+        orderService.buyOrder("732171109");
     }
 
 }
