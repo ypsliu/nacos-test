@@ -2,8 +2,11 @@ package com.demo.provider.filter;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -26,6 +29,11 @@ public class MyCorsConfiguration {
                         .allowedMethods("GET", "POST", "DELETE", "PUT","PATCH")
                         .allowedHeaders("*")
                         .maxAge(3600);
+            }
+
+            @Override
+            public void addArgumentResolvers(List<HandlerMethodArgumentResolver> resolvers) {
+                resolvers.add(new LZYMethodProcessor());
             }
         };
     }
